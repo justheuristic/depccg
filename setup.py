@@ -105,7 +105,7 @@ def generate_cython(here, source):
 
 def generate_cpp(options):
     options = ' '.join(options)
-    options = f'OPTIONS={options}'
+    options = 'OPTIONS=' + str(options)
     with chdir('cpp'):
         p = subprocess.call(["make", options], env=os.environ)
         if p != 0:
